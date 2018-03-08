@@ -1,0 +1,16 @@
+<apex:page sidebar="false" showHeader="false">
+    <h1>
+       Hi
+        First Page Created!
+    </h1>
+    <apex:pageBlock title="This is used for block title">
+       <apex:pageBlockSection title="This is for a section">
+           I added a page block and pageblocksection 
+        </apex:pageBlockSection>
+        
+        <apex:pageBlockSection title="Second page block added">
+            This is the second section in the page 
+        </apex:pageBlockSection>        
+        
+    </apex:pageBlock>
+</apex:page>

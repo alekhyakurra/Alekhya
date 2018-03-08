@@ -1,0 +1,36 @@
+<apex:page controller="RoleController" showHeader="false" standardStylesheets="false" sidebar="false" >
+    <title> Hierarchy</title>
+    
+    <body>
+        <div align="left">
+            <h1>
+                Hierarchy
+            </h1>
+        </div>
+        <div align="left">
+            <table align="left">
+                <tr>
+                <td>
+                   <ul>
+                       <li>
+                       <strong> <apex:outputLink value="roledetails?id={!role.ID}">{!role.Name}</apex:outputLink></strong>
+                        <ul>
+                            <apex:repeat value="{!mainroles}" var="r">
+                                
+                            <li><strong><apex:outputLink value="roledetails?id={!r.boss.ID}">{!r.boss.Name}</apex:outputLink></strong></li> 
+                                 <ul>
+                                     <apex:repeat value="{!r.reportees}" var="re">
+                                          <li><strong><apex:outputLink value="roledetails?id={!re.ID}">{!re.Name}</apex:outputLink></strong></li>
+                                     </apex:repeat>                            
+                                 </ul>
+                          </apex:repeat>                     
+                          </ul>
+                          </li>
+                    </ul>
+                </td>  
+            </tr>
+        </table>   
+    </div>    
+ </body>
+  
+ </apex:page>
